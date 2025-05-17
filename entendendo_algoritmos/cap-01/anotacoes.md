@@ -73,3 +73,11 @@ Além disso, esta notação leva em consideração na pior das hipóteses. Ou se
 - Quick sort (será visto mais afrente) -> O(n * log n)
 - Ordenação por seleção -> O(n²)
 - Um algoritmo muito lento (como o "caixeiro viajante")-> O(n!)
+
+## Recaptulação
+
+- A **pesquisa binária** é *muito mais rápida* do que a **pesquisa simples**.
+- O(log n) é mais rápido do que O(n), e O(log n) **fica ainda mais rápido** conforme os elementos da lista aumentam.
+- A **rapidez** de um algoritmo **não é medida em segundos**.
+- O **tempo de execução** de um algoritmo é medido por meio de **seu crescimento**.
+- O tempo de execução de algoritmos é expresso na **notação Big O**.
