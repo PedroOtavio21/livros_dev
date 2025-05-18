@@ -1,83 +1,101 @@
-# Capítulo 1 - Introdução a algoritmos
+# Capítulo 1 - Introdução a Algoritmos
 
-Neste capítulo:
-- Acesso ao fundamentos do conteúdo central do livro
+## Neste capítulo:
+- Acesso aos fundamentos do conteúdo central do livro
 - Primeiro algoritmo de busca (pesquisa binária)
 - Tempo de execução de algoritmos (notação Big O)
 - Prática comum de algoritmos (recursão)
 
+---
+
 ## Introdução - O que é um algoritmo?
 
 O que é um algoritmo?
-- conjunto de instruções que realizam um determinado problema. 
-- imagine como uma receita para se fazer um bolo
+- Conjunto de instruções que realizam a solução de um determinado problema
+- Imagine como uma receita para se fazer um bolo
 
-Cada algoritmo tem o seu próprio caso de uso. Ou seja, são mais eficazes em certos casos do que outros, cabendo ao próprio desenvolvedor escolher qual será o melhor algoritmo.
+Cada algoritmo tem seu próprio caso de uso, sendo mais eficaz em certos contextos. Cabe ao desenvolvedor escolher o mais adequado.
 
-Ao longo do livro, serão mostrados algoritmos de maior aplicabilidade, em diversos problemas do mundo real.
-- Desde banco de dados, para IA, buscas e etc.
+Ao longo do livro, serão mostrados algoritmos de ampla aplicabilidade, em problemas do mundo real:
+- Banco de dados
+- Inteligência Artificial
+- Buscas, entre outros
 
-## Pesquisa binária
+---
 
-Algoritmo bastante utilizado para encontrar um determinado elemento dentro de uma lista (já ordenada anteriormente). 
+## Pesquisa Binária
 
-Exemplos de casos de uso de uma "pesquisa binária":
+Algoritmo utilizado para encontrar um elemento dentro de uma lista **ordenada**.
+
+### Exemplos de uso:
 - Encontrar o nome de uma pessoa em uma agenda telefônica
 - Encontrar uma palavra em um dicionário
-- Verificar se sua conta está cadastrada em um site (como o facebook)
+- Verificar se uma conta está cadastrada em um site
 
-Como funciona sua aplicação?
-- Primeiro, é necessário que seja uma lista ordenada (se não, seu tempo de execução será diferente!)
-- Além disso, é preciso que você tenha um valor/elemento a ser encontrado na lista
-- Em seu "core", você sempre chuta um número intermediário e elimina metade dos números restantes em cada tentativa.
-- A lista irá retornar sua localização, ou então Null
+### Funcionamento:
+- Lista deve estar **ordenada**
+- Deve haver um **valor alvo** a ser buscado
+- A cada passo, o algoritmo **chuta o valor do meio** da lista
+- Elimina **metade** da lista a cada tentativa
+- Retorna a **posição** do valor ou `null` (caso não encontrado)
 
-Geralmente, em uma lista de n números, a pesquisa binária leva em torno de:
-- Log de n na base 2!
+### Eficiência:
+- Pesquisa binária em uma lista de `n` elementos leva, em média:  
+  **log₂(n)** tentativas
 
-### Exemplo de aplicação (Pesquisa Binária) - 100 números
+#### Exemplo: lista com 100 elementos
+| Tentativa | Elementos Restantes |
+|-----------|---------------------|
+| 1ª        | 50                  |
+| 2ª        | 25                  |
+| 3ª        | 13                  |
+| 4ª        | 7                   |
+| 5ª        | 4                   |
+| 6ª        | 2                   |
+| 7ª        | 1                   |
 
-- primeira tentativa  ->  50 números restantes
-- segunda tentativa   ->  25 números restantes
-- terceira tentativa  ->  13 números restantes
-- quarta tentativa    ->  7 números restantes
-- quinta tentativa    ->  4 números restantes
-- sexta tentativa     ->  2 números restantes
-- sética tentativa    ->  1 número restante
+---
 
-## Tempo de execução
+## Tempo de Execução
 
-Na área de desenvolvimento em geral, entende-se que cada algoritmo tem o seu próprio **tempo de execução**, onde crescem em taxas diferentes em tempo x número de elementos. 
+Cada algoritmo possui um **tempo de execução** específico, que cresce de forma diferente com o número de elementos (entrada).
 
-Por exemplo, uma pesquisa simples possui um *tempo linear*, visto que realiza uma pesquisa de n por n elemento. Já na pesquina binária, ela possui um *tempo logarítmico*, por dividir sempre sua pesquisa pela metade.
+### Exemplos:
+- Pesquisa simples → tempo **linear**
+- Pesquisa binária → tempo **logarítmico**
 
-Em suma: a medição de rapidez de um algoritmo não é medida em segundos, mas pelo crescimento do número de operações! Quanto menos operações, mais rápido o algoritmo!
+> A rapidez de um algoritmo não é medida em segundos, mas sim pelo **número de operações necessárias**.
+
+---
 
 ## Notação Big O
 
-Geralmente, para entender o tempo de execução de algoritmo, é utilizada uma notação chamada Notação Big O, na qual diz o quão rápido um algoritmo é. Desta forma, você pode comparar o número de operações entre os algoritmos, para escolher o melhor entre eles.
+Forma de medir e comparar o desempenho dos algoritmos, especialmente no **pior caso**.
 
-A notação se escreve da seguinte forma
-- O grande "O"
-- Seguido da quantidade de operações entre parêntesis 
+### Sintaxe:
+- Letra **O** maiúscula
+- Seguido da **função de complexidade** entre parênteses
 
-Além disso, esta notação leva em consideração na pior das hipóteses. Ou seja, ela percorre toda a lógica do algoritmo em questão, tendo certeza que ela nunca terá um tempo de execução pior do que esperado, na pior das hipóteses. Agora, como assim pior e melhor?
+### Exemplo de casos:
+- **Melhor caso** (encontrar de primeira): `O(1)`
+- **Pior caso** (verificar todos): `O(n)`
 
-- Melhor caso -> encontrar um elemento na primeira tentativa: O(1)
-- Pior caso -> encontrar o elemento após percorrer por todos os elementos: O(n)
+### Tabela de exemplos:
 
-### Exemplos de notações Big O
+| Algoritmo                  | Complexidade Big O     |
+|---------------------------|------------------------|
+| Pesquisa simples           | O(n)                   |
+| Pesquisa binária           | O(log n)               |
+| Quick sort (visto depois)  | O(n log n)             |
+| Ordenação por seleção      | O(n²)                  |
+| Caixeiro viajante          | O(n!)                  |
 
-- Pesquisa simples -> O(n)
-- Pesquisa binária -> O(Log n)
-- Quick sort (será visto mais afrente) -> O(n * log n)
-- Ordenação por seleção -> O(n²)
-- Um algoritmo muito lento (como o "caixeiro viajante")-> O(n!)
+---
 
-## Recaptulação
+## Recapitulação
 
-- A **pesquisa binária** é *muito mais rápida* do que a **pesquisa simples**.
-- O(log n) é mais rápido do que O(n), e O(log n) **fica ainda mais rápido** conforme os elementos da lista aumentam.
-- A **rapidez** de um algoritmo **não é medida em segundos**.
-- O **tempo de execução** de um algoritmo é medido por meio de **seu crescimento**.
-- O tempo de execução de algoritmos é expresso na **notação Big O**.
+- A **pesquisa binária** é *muito mais rápida* que a **pesquisa simples**
+- `O(log n)` é mais rápido que `O(n)` — e se torna **mais eficiente** quanto maior for a lista
+- A rapidez de um algoritmo **não é medida em segundos**
+- O **tempo de execução** depende do **crescimento do número de operações**
+- Esse crescimento é expresso na **notação Big O**
