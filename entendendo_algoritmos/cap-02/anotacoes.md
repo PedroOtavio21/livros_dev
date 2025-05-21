@@ -140,3 +140,63 @@ Permite **pular direto** para qualquer posição, como o décimo elemento, por e
 - Muitos algoritmos e estruturas se beneficiam dessa característica.
 
 ---
+
+## Ordenação por Seleção
+
+### Exemplo: Lista de Músicas
+
+Suponha que você tenha várias músicas no seu celular. Para cada artista, há um contador de *plays*.  
+Você deseja **ordenar os artistas** do **mais tocado** para o **menos tocado**, criando assim uma lista com seus artistas favoritos.
+
+**Solução:**  
+- Encontre o artista mais tocado e **adicione-o a uma nova lista ordenada**.
+- Repita esse processo até que todos os artistas estejam na nova lista.
+
+---
+
+### Tempo de Execução
+
+Para encontrar o artista mais tocado:
+- É necessário **verificar todos os elementos da lista** → `O(n)`
+
+Como essa operação será repetida **n vezes**:
+- Tempo total de execução → `O(n × n)` ou `O(n²)`
+
+---
+
+### Aplicações
+
+Esse tipo de ordenação é útil em vários cenários:
+
+- Ordenar **nomes** em uma agenda telefônica
+- Ordenar **datas** de viagens
+- Ordenar **emails** (do mais novo ao mais antigo)
+
+Embora seja funcional, esse algoritmo **não é o mais eficiente**.  
+O algoritmo **Quicksort**, por exemplo, realiza ordenações em `O(n log n)` — **muito mais rápido**!
+
+---
+
+## Recapitulando
+
+A **memória** do seu computador funciona como um **conjunto gigante de gavetas**.
+
+###  Armazenamento de múltiplos elementos
+
+Você pode utilizar:
+
+- **Array** → Elementos armazenados **lado a lado** na memória.
+- **Lista encadeada** → Elementos armazenados **espalhados**, cada um contendo o **endereço do próximo**.
+
+---
+
+### Comparativo de Estruturas
+
+| Característica         | Array                           | Lista Encadeada               |
+|------------------------|---------------------------------|-------------------------------|
+| Acesso à leitura       | ✅ Muito rápido (`O(1)`)       | ❌ Mais lento (`O(n)`)        |
+| Inserções/Eliminações  | ❌ Lentas (`O(n)`)             | ✅ Rápidas (`O(1)`)           |
+| Tipagem dos elementos  | ✅ Mesmo tipo obrigatório      | ✅ Pode ser flexível          |
+
+> **Observação:** Todos os elementos de um array devem ser do **mesmo tipo**  
+> (ex: todos `int`, todos `double`, etc.)
