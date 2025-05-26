@@ -177,3 +177,66 @@ sauda('Pedro')
 #### A grande ideia desta seção
 
 *"Quando você chama uma função através de outra, a chamada de função fica pausada em um estado parcialmente completo."*
+
+## 🧠 A pilha de chamada com recursão
+
+As funções recursivas **também utilizam a pilha de chamada**! Vamos analisar isso na prática com um exemplo clássico: o **fatorial**, representado pela função `fat`.
+
+A chamada `fat(5)` é escrita como **5!**, e sua definição matemática é:
+
+- 5! = 5 × 4 × 3 × 2 × 1
+
+De forma semelhante:
+
+- fat(3) = 3 × 2 × 1
+
+Aqui está uma função recursiva para calcular o fatorial de um número:
+
+```py
+def fat(x):
+    if x == 1:  # Caso base
+        return x
+    else:       # Caso recursivo
+        return x * fat(x-1)
+```
+
+### Como a pilha age nesse caso?
+Vamos considerar a chamada fat(3). O que acontece na pilha de chamada?
+
+Etapas da execução:
+
+1. fat(3) → empilhada
+2. fat(2) → empilhada
+3. fat(1) → empilhada (caso base atingido)
+
+Agora, os retornos começam a acontecer:
+
+1. fat(1) retorna 1
+2. fat(2) retorna 2 * 1 = 2
+3. fat(3) retorna 3 * 2 = 6
+
+Ou seja, a pilha armazena as chamadas incompletas e resolve tudo do fim para o começo.
+
+### Observação importante
+
+Usar uma pilha é conveniente, pois você não precisa acompanhar manualmente o que está sendo processado — a pilha gerencia isso automaticamente.
+
+No entanto, há um custo: cada chamada ocupa espaço na memória. Quanto mais chamadas, mais memória será consumida, e isso pode levar a um estouro de pilha (stack overflow) em chamadas muito profundas.
+
+### O que fazer nesses casos?
+Quando a profundidade da pilha se torna um problema, você tem duas opções principais:
+
+- Reescrever o código com loops – isso evita o uso intenso da pilha.
+- Utilizar tail recursion (recursão de cauda) – uma técnica onde a chamada recursiva é a última instrução da função, permitindo otimizações em algumas linguagens (Python não implementa essa otimização por padrão).
+
+## Recapitulando
+
+- Recursão é quando uma função chama a si mesma.
+- Toda função recursiva possui:
+    - Caso base: onde a recursão termina.
+    - Caso recursivo: onde a função continua chamando a si mesma.
+- Uma pilha tem duas operações básicas:
+    - push → adicionar item ao topo.
+    - pop → remover o item do topo.
+- Todas as chamadas de função são empilhadas na pilha de chamada.
+- A pilha pode ficar grande e ocupar muita memória, especialmente em chamadas recursivas profundas.
