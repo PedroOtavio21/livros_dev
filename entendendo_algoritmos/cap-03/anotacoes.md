@@ -91,3 +91,89 @@ def regressiva(i):
 ```
 
 Com isso, a função agora funciona corretamente!
+
+## A Pilha
+
+### Pilha vs Arrays e Listas
+
+Imagine que você está organizando um **churrasco com amigos** e anota as tarefas em **notas adesivas** empilhadas.  
+Você sempre **adiciona novas tarefas no topo** e também **remove a tarefa do topo** quando concluída.
+
+Essa estrutura de dados é chamada de **pilha**.
+
+**Duas operações principais:**
+- `push`: adicionar item ao topo da pilha
+- `pop`: remover e ler o item do topo
+
+**Diferença para listas e arrays:**
+- Em **listas/arrays**, você pode acessar ou remover itens de qualquer posição.
+- Em **pilhas**, apenas o **último item adicionado** pode ser removido primeiro (LIFO – *Last In, First Out*).
+
+---
+
+## A Pilha de Chamada (*Call Stack*)
+
+Todo programa usa uma **pilha de chamada interna**, utilizada pelo computador para **controlar o fluxo de execução de funções**.
+
+Sempre que uma função é chamada:
+- Ela é colocada **no topo da pilha de chamada**.
+- Quando termina sua execução, é **removida (pop)** da pilha.
+
+---
+
+### Exemplo de Código
+
+```py
+def sauda(nome):
+    print('Olá, ' + nome + '!')
+    sauda2(nome)
+    print('preparando para dizer tchau...')
+    tchau()
+
+def sauda2(nome):
+    print('Como vai ' + nome + '?')
+
+def tchau():
+    print('ok, tchau!')
+```
+
+### ▶️ Chamando a função `sauda`
+
+Se chamarmos a função:
+
+```py
+sauda('Pedro')
+```
+
+#### 🔍 O que acontece na pilha de chamada?
+
+**Passo a passo:**
+
+1. `sauda('Pedro')` é chamada
+
+- A função `sauda` é colocada no topo da pilha de chamada.
+- Imprime: `Olá, Pedro!`
+
+2. Dentro de `sauda`, é chamada a função `sauda2('Pedro')`
+
+- A função `sauda2` é empilhada.
+- Imprime: `Como vai Pedro?`
+- `sauda2` termina e é removida da pilha.
+
+3. O controle volta para a função `sauda`
+
+- Imprime: `preparando para dizer tchau...`
+
+4. Chama-se então a função `tchau()`
+
+- A função `tchau` é empilhada.
+- Imprime: `ok, tchau!`
+- `tchau` termina e é removida da pilha.
+
+5. `sauda` termina
+
+- É removida da pilha.
+
+#### A grande ideia desta seção
+
+*"Quando você chama uma função através de outra, a chamada de função fica pausada em um estado parcialmente completo."*
