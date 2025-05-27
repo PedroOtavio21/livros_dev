@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Leitura de dados
+        let valorTotalConta = Number(prompt('Insira o valor total da conta: '))
+        let quantidadeClientes = Number(prompt('Informe a quantidade de clientes que irão pagar: '))
+
+        // Processamento
+        let valorASerPagoPorCliente = valorTotalConta / quantidadeClientes
+
+        // Saída de dados
+        alert(`Valor da Conta R$: ${valorTotalConta.toFixed(2)}`)
+        alert(`Número de clientes: ${quantidadeClientes}`)
+        alert(`Valor por cliente R$: ${valorASerPagoPorCliente.toFixed(2)}`)
+    </script>
+</body>
+</html>
