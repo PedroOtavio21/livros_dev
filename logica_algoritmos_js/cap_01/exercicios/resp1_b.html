@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let valorTotalConta = Number(prompt('Insira o valor total da conta: '))
+        let quantidadeClientes = Number(prompt('Informe a quantidade de clientes que irão pagar: '))
+
+        let valorASerPagoPorCliente = valorTotalConta / quantidadeClientes
+
+        alert(`Valor da Conta R$: ${valorTotalConta.toFixed(2)}`)
+        alert(`Número de clientes: ${quantidadeClientes}`)
+        alert(`Valor por cliente R$: ${valorASerPagoPorCliente.toFixed(2)}`)
+    </script>
+</body>
+</html>

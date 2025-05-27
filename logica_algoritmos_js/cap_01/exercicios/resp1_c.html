@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let precoProduto = Number(prompt('Insira o preço do produto: '))
+
+        let valorAVista = precoProduto * 0.90
+        let valorParcela = precoProduto / 3
+
+        alert(`Preço R$: ${precoProduto.toFixed(2)}`)
+        alert(`À Vista R$: ${valorAVista.toFixed(2)}`)
+        alert(`Ou 3x de R$: ${valorParcela.toFixed(2)}`)
+    </script>
+</body>
+</html>
