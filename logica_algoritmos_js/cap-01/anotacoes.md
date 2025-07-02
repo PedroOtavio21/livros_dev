@@ -172,6 +172,15 @@ var totalHoras = (dias * 24) + horas;
 alert("Total de horas: " + totalHoras);
 ```
 
+## 📚 Exercícios Propostos
+
+1. Vizinho anterior e posterior de um número.
+2. Valor por cliente em pizzaria.
+3. Pagamento à vista com desconto ou parcelado.
+4. Média de duas notas.
+
+**OBS:** A resolução dos exercícios se encontra na mesma hierarquida de diretórios 
+
 ## 📌 Conclusões do Capítulo
 
 - Persistência é fundamental.
