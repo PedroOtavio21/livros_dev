@@ -1,183 +1,182 @@
-# Capítulo 1 – Introdução
+# 📘 Capítulo 1 — Introdução à Lógica de Programação com JavaScript
 
-## Conceitos Fundamentais
-
-- **Lógica de Programação**: Base para ensinar ao computador como resolver problemas de forma estruturada, sequencial, condicional e repetitiva.
-
-- **Algoritmo**: Sequência lógica e finita de passos para resolver uma tarefa.
-
-- **Programar é ensinar**: Devemos pensar em como resolver o problema antes de codificar.
-
-## Habilidades Essenciais
-
-- **Compreender o problema**: Ler e interpretar corretamente o que é pedido.
-
-- **Dedução lógica**: Fazer inferências com base em condições (ex: se A então B).
-
-- **Listar etapas**: Quebrar o problema em passos sequenciais.
-
-- **Explorar soluções alternativas**: Um problema pode ter várias soluções corretas.
-
-- **Detalhamento minucioso**: Cada passo deve ser claro e pensado com cuidado.
-
-## Fluxo de um Programa
-
-1. **Entrada** – dados recebidos do usuário.
-
-2. **Processamento** – cálculos, decisões e manipulações.
-
-3. **Saída** – exibição dos resultados.
+Este capítulo introduz os conceitos fundamentais de **lógica de programação e algoritmos**, essenciais para resolver problemas com o auxílio de computadores. A linguagem JavaScript será utilizada como meio para praticar esses conceitos.
 
 ---
 
-## A Linguagem JavaScript
+## 🧠 O que é Lógica de Programação?
 
-- Criada em 1995; padronizada como ECMAScript.
+> Lógica de programação é a habilidade de **estruturar o raciocínio** para resolver problemas com código.
 
-- Executada principalmente no lado do cliente (navegador).
+- O aprendizado é **gradual e prático**.
+- **Erros são comuns**: persistência é essencial.
+- Dominar lógica ajuda na **transição entre linguagens** (JS, Python, C#, etc.).
 
-- Muito utilizada no desenvolvimento web, junto com HTML e CSS.
-
-- Permite criar interatividade, validações, jogos e aplicativos web.
-
-- Muito valorizada no mercado de trabalho.
-
-### Editores de Código
-
-- **Online**: w3schools, jsbin, js.do.
-
-- **Offline**: Visual Studio Code (recomendado).
+### 🏧 Exemplo: Caixa Eletrônico
+- **Sequência**: pedir CPF → senha → mostrar menu.
+- **Condicional**: verificar senha correta.
+- **Repetição**: tentar novamente até acertar ou travar.
 
 ---
 
-## Primeiros Comandos
+## 🧩 Aspectos Fundamentais da Lógica
 
-- `alert()`: exibe mensagens ao usuário.
+1. **Entender o problema com atenção.**
+2. **Aplicar lógica dedutiva.**
+3. **Listar as etapas necessárias.**
+4. **Explorar diferentes soluções.**
+5. **“Ensinar” o computador.**
+6. **Pensar em cada detalhe.**
 
-- `prompt()`: solicita informações do usuário.
+> 💡 Um algoritmo é como uma **receita de bolo**: esquecer um passo compromete tudo!
 
-- Exemplo de uso:
+---
+
+## 🔄 Entrada, Processamento e Saída
+
+Fluxo básico de um programa:
+
+1. **Entrada:** usuário informa dados → `prompt()`
+2. **Processamento:** manipulação dos dados
+3. **Saída:** resultado mostrado ao usuário → `alert()`
+
+---
+
+## 💻 Sobre o JavaScript
+
+- Criado em **1995**, hoje padronizado como **ECMAScript**.
+- Torna páginas web **interativas e dinâmicas**.
+- Atua no lado do cliente (navegador) e no servidor (com Node.js).
+- Utilizado no livro para fins educacionais.
+
+---
+
+## 🛠️ Editores de Código
+
+| Tipo              | Exemplos             | Recomendado? |
+|-------------------|----------------------|---------------|
+| Simples           | Bloco de Notas       | ❌ Não        |
+| Online            | w3schools, jsbin     | ☑️ Para testes |
+| Profissionais     | **VS Code**, Sublime | ✅ Sim        |
+
+> 📌 **VS Code** é o editor recomendado.
+
+---
+
+## 🖥️ `alert()` — Saída de Dados
 
 ```js
-var nome = prompt("Qual é o seu nome?");
+alert("Bem-vindo!");
+```
+
+- Colocado entre <script></script>.
+- JS é case sensitive: Alert ≠ alert.
+
+## 📥 `prompt()` — Entrada de Dados
+
+```js
+var nome = prompt("Qual seu nome?");
 alert("Olá " + nome);
 ```
 
-### Variáveis e Constantes
+- Sempre retorna String.
+- Para usar números:
 
-- Variáveis: armazenam dados que podem mudar.
-    - Declaração: `var nome`
-    - Atribuição: `var idade = 18;`
+```js
+var num = Number(prompt("Digite um número:"));
+```
 
-- Constantes: valores fixos que não mudam.
-    - Exemplo: `const PI = 3.14;`
+## 📦 Variáveis e Constantes
 
-- Regra de nomes: evitar espaços, números no início, caracteres especiais e palavras reservadas.
+- Variável: espaço para guardar dados mutáveis.
 
-### Comentários
+```js
+var idade = 18;
+```
 
-- Linha única: `// comentário`
+- Constante: valor fixo, declarado com const.
 
-- Várias linhas:
+```js
+const PI = 3.14;
+```
 
-```js 
+### Regras de Nomenclatura
+
+- Sem espaços ou acentos.
+- Não iniciar com número.
+- Evitar palavras reservadas.
+- Usar camelCase (nomeCliente).
+
+## 📝 Comentários no Código
+
+```js
+// Comentário de uma linha
+
 /*
-  comentário
-  em várias linhas
+   Comentário de várias linhas
 */
 ```
 
-### Tipos de Dados e Conversões
+## 🧾 Tipos de Dados
 
-- Principais tipos: **string**, **number**, **boolean**.
+| Tipo    | Exemplo         |
+| ------- | --------------- |
+| String  | `"texto"`       |
+| Number  | `10`, `3.14`    |
+| Boolean | `true`, `false` |
 
-- Conversão:
-    - `Number("20")` converte texto para número.
-    - `toFixed(2)` fixa casas decimais (útil para valores em R$).
+- JS não exige declaração de tipo.
+- Converter string → número:
 
----
-
-## Exemplos de Programas
-
-- Dobro de um número.
-
-```html
-<meta charset="utf-8">
-<script>
-    // lê um dado de entrada
-    var num = prompt("Número: ");
-    // calcula o dobro
-    var dobro = num * 2;
-    // exibe a resposta
-    alert("Dobro é: " + dobro);
-</script>
+```js
+var valor = Number(prompt("Digite:"));
 ```
 
-- Soma de dois números.
+- Exibir decimais:
 
-```html
-<meta charset="utf-8">
-<script>
-    // lê os números
-    var num1 = Number(prompt("1º Número: "));
-    var num2 = Number(prompt("2º Número: "));
-    // calcula a soma
-    var soma = num1 + num2;
-    // exibe o resultado
-    alert("Soma é: " + soma);
-</script>
+```js
+total.toFixed(2);
 ```
 
-- Cálculo de taxa de garçom (10%).
+## ⚙️ Exemplos Práticos
 
-```html
-<meta charset="utf-8">
-<script>
-    // lê o valor do jantar
-    var jantar = Number(prompt("Valor do Jantar R$: "));
-    // calcula os dados
-    var garcom = jantar * 0.10;
-    var total = jantar + garcom;
-    // apresenta as respostas
-    alert("Taxa Garçom R$: " + garcom.toFixed(2) + "\nTotal R$: " + total.toFixed(2));
-</script>
+1. Dobro de um número
+
+```js
+var num = Number(prompt("Número:"));
+alert("Dobro: " + (num * 2));
 ```
 
-- Total de horas de uma viagem em dias e horas.
+2. Soma de dois números
 
-```html
-<meta charset="utf-8">
-<script>
-    // lê os dados de entrada
-    var dias = Number(prompt("Nº Dias: "));
-    var horas = Number(prompt("Nº Horas: "));
-    // calcula a duração
-    var total = (dias * 24) + horas;
-    // exibe o total
-    alert("Total de Horas: " + total);
-</script>
+```js
+var n1 = Number(prompt("1º número:"));
+var n2 = Number(prompt("2º número:"));
+alert("Soma: " + (n1 + n2));
 ```
 
-## Exercícios Propostos
+3. Conta do Jantar com 10% de taxa
 
-- Vizinhos de um número.
+```js
+var valor = Number(prompt("Valor do jantar:"));
+var taxa = valor * 0.1;
+var total = valor + taxa;
+alert("Taxa: R$ " + taxa.toFixed(2) + "\nTotal: R$ " + total.toFixed(2));
+```
+4. Duração de viagem (dias + horas)
 
-- Divisão de conta entre clientes.
+```js
+var dias = Number(prompt("Dias:"));
+var horas = Number(prompt("Horas:"));
+var totalHoras = (dias * 24) + horas;
+alert("Total de horas: " + totalHoras);
+```
 
-- Preço com desconto e parcelamento.
+## 📌 Conclusões do Capítulo
 
-- Média de duas notas.
-
----
-
-## Considerações Finais
-
-- Persistência e atenção aos detalhes são fundamentais.
-
-- Treinamento e prática desenvolvem a lógica.
-
-- Toda solução começa por entrada, processamento e saída.
-
-- JavaScript é uma excelente escolha para começar na programação.
-
-- Bons fundamentos são a base para construir sistemas maiores.
+- Persistência é fundamental.
+- Cuidado com sintaxe e lógica.
+- Usar sempre o fluxo Entrada → Processamento → Saída.
+- JavaScript é uma ótima linguagem para iniciar.
+- Edite e execute os programas com VS Code.
+- Pratique com prompt(), alert(), variáveis e cálculos simples.
